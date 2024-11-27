@@ -5,7 +5,7 @@
 // lunghezza di 8+ caratteri.
 
 // variabile che contiene la password
-$password = 'Ciao123';
+$password = 'Ciao1234';
 
 // FUNZIONI PER I CHECK \\
 // creo la funzione che controlla che sia presente almeno una lettera maiuscola
@@ -51,4 +51,31 @@ function passwordCheck($password){
         echo "La password inserita NON rispetta i nostri criteri, controlla che:\n- Sia presente almeno una lettera maiuscola;\n- Sia presente almeno un carattere numerico;\n- La lunghezza sia almeno di 8 caratteri.";
     }
 }
-passwordCheck($password);
+// passwordCheck($password);
+
+// REFACTORING CODICE
+
+// Invece di salvarmi in una variabile un array composto da ogni singolo carattere della password, e poi ciclarlo e fare il controllo, 
+// utilizzo direttamente la funzione preg_match con i rispettivi regex che mi servono, aggiungo il type hinting per avere un codice più robusto.
+function containsUppercase(string $password):bool{ 
+    return (bool) preg_match('/[A-Z]/', $password);
+}
+
+function containsNumber(string $password):bool{
+    return (bool) preg_match('/\d/', $password);
+}
+
+function validateLength(string $password):bool{
+    return strlen($password) >= 8;
+}
+
+// utilizzo :void perchè la funzione non prevede un valore di ritorno
+function validatePassword(string $password) :void{
+    if(containsUppercase($password) && containsNumber($password) && validateLength($password)){
+        echo 'La password inserita rispetta i nostri criteri.';
+    }else{
+        echo "La password inserita NON rispetta i nostri criteri, controlla che:\n- Sia presente almeno una lettera maiuscola;\n- Sia presente almeno un carattere numerico;\n- La lunghezza sia almeno di 8 caratteri.";
+    }
+}
+$password= 'cCcccccc1';
+validatePassword($password);

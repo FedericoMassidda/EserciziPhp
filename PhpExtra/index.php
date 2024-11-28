@@ -15,4 +15,7 @@ function test(string $password){
     }
 }
 
-test($password);
+// test($password);
+
+// Stessa funzione però con l'operatore ternario
+echo preg_match('/[A-Z]/', $password) && preg_match('/\d/', $password) && strlen($password) >= 8 ? 'La password inserita rispetta i nostri criteri.' : "La password inserita NON rispetta i nostri criteri, controlla che:\n- Sia presente almeno una lettera maiuscola;\n- Sia presente almeno un carattere numerico;\n- La lunghezza sia almeno di 8 caratteri.";

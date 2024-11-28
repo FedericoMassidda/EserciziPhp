@@ -1,0 +1,298 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* colors */
+:root{
+    --background1: #e6e6e6;
+    --fontColor1: #1a1a1a;
+    --backgroundColor1: #0c76f0;
+    --primaryColor1: #4a90e2;
+    --primaryColor2: #a3d5ff;
+    --primaryColor3: #abffcb;
+    --secondaryColor1: #dee2e6;
+    --secondaryColor2: #797979;
+    --secondaryColor3: #383838;
+    --contrastColor1: #ffc72d;
+}
+
+/* background */
+.bodyBackgroundindex{
+    height: 100%;
+    background: url(/public/images/BackgroundOceanGames.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bodyBackground{
+    background: radial-gradient(circle at bottom, var(--backgroundColor1), var(--primaryColor1), var(--primaryColor2), var(--secondaryColor1));
+    background-attachment: fixed; 
+}
+
+
+/* logo */
+.logo {
+    border-radius: 50px;
+}
+.biglogo {
+    border-radius: 50px;
+}
+
+/* navbar */
+.navbarCustom{
+    margin-left: auto;
+    width: 99vw;
+    z-index: 99;
+    /* glass background */
+    backdrop-filter: blur(2px) saturate(100%);
+    -webkit-backdrop-filter: blur(2px) saturate(100%);
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    /* end glass */
+
+    backdrop-filter: blur(5px) saturate(150%); /* Intensificato effetto glassmorphism */
+}
+.navbarCustom:hover {
+    background-color: rgba(255, 255, 255, 0.3); }/* Effetto hover */
+
+.dropdownCustom{
+    background: linear-gradient(var(--secondaryColor1), var(--primaryColor2), var(--primaryColor1));
+    border: 1px solid var(--backgroundColor1);
+}
+.btnDropdownCustom{
+    margin: 5px;
+    width: 90%;
+}
+.btnSearchCustom{
+    height: fit-content;
+}
+
+/* sidebar */
+.sidebarCustom{
+    width: 20vw !important;
+    height: 100vh;
+    color: var(--fontColor1);
+    position: absolute;
+    /* glass background */
+    backdrop-filter: blur(2px) saturate(100%);
+    -webkit-backdrop-filter: blur(2px) saturate(100%);
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    /* end glass */
+}
+
+/* .sidebarCustom:hover {
+    transform: scale(1.02); Effetto di espansione al hover */
+
+.sideItemCustom{
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: var(--fontColor1);
+    text-decoration: none;
+    background: none;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.sideItemCustom:hover{
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* index view */
+.carouselCustom{
+    margin-top: 6vh;
+    margin-bottom: 22vh;
+    /* margin-left: 8vw; */
+}
+.indexCardCarouselWrapper{
+    /* background: linear-gradient(var(--backgroundColor1), var(--primaryColor1), var(--primaryColor2)); */
+    /* glass background */
+    backdrop-filter: blur(10px) saturate(150%);
+    -webkit-backdrop-filter: blur(10px) saturate(150%);
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    /* end glass */
+    width: 40vw;
+    height: 50vh;
+    border-radius: 12px;
+
+}
+.indexCardImg{
+    width: 40vw;
+    height: 44vh;
+    padding: 5px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.indexCardText{
+    height: 6vh;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.indexCarouselAnchor{
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+/* card */
+.cardWrapper{
+    /* display */
+    display: flex;
+    flex-direction: column;
+
+    /* color */
+    background: linear-gradient(var(--primaryColor2), var(--secondaryColor1), var(--secondaryColor1));
+    color: var(--fontColor1);
+
+    /* box model */
+    padding-bottom: 8px;
+    margin: 16px;
+    border: 2px solid var(--secondaryColor1);
+    border-radius: 8px;
+}
+.cardImageCustom{
+    /* size */
+    max-width: 100%;
+
+    /* box model */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.cardTextCustom{
+    /* box model */
+    margin-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.cardDescriptionCustom{
+    /* tramite questa classe css il testo della descrizione viene croppato ad una riga */
+    display: -webkit-box;
+    line-clamp: 1;        
+    -webkit-line-clamp: 1;       
+    -webkit-box-orient: vertical;
+    overflow: hidden;            
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+.btnShowCustom{
+    margin-left: 8px;
+}
+.cardAnchorDecoration{
+    text-decoration: none;
+    color: var(--fontColor1);
+}
+
+/* show view */
+.showElementCustom{
+    margin-left: 12vw !important;
+}
+
+
+.custom-margin {
+    text-align: center; 
+}
+
+/* carousel */
+/* .carouselImgCustom{
+    
+    height: 60vh; 
+} */
+
+/* revisor */
+.btnRevisorCustom{
+    width: 100px;
+}
+/* revisor index */
+.pageWrapper{
+    height: 80vh;
+}
+/* revisor carousel */
+.carousel-inner-custom img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.revisorCarousel {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* CRUD view */
+.imgPreviewCustom{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
+}
+
+
+
+
+/* Effetto hover sui campi di input */
+.form-control {
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    border: 2px solid var(--secondaryColor2);
+    margin-bottom: 20px; /*  margine tra gli input */
+    background: rgba(255, 255, 255, 0.8); /* Sfondo chiaro e traslucido per gli input */
+    font-size: 1.1rem; /* Dimensione testo migliorata */
+}
+.form-control:focus {
+    border-color: var(--primaryColor1);
+    box-shadow: 0px 0px 10px var(--primaryColor1);
+}
+
+
+.btn-primary {
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    padding: 15px; /* Aggiungi padding per renderlo più grande */
+    font-size: 1.3rem; /* Aumenta la dimensione del testo */
+    width: auto;
+}
+.btn-primary:hover {
+    background-color: var(--contrastColor1);
+    transform: scale(1.1); 
+}
+
+
+
+.form {
+
+    background: linear-gradient(135deg, var(--primaryColor2), var(--primaryColor1)); 
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.2); /* Ombra per dare profondità */
+    border-radius: 20px;
+    padding: 100px; /* Aumenta il padding */
+    max-width: 1000px; 
+    margin: auto;
+    animation: fadeIn 0.5s ease-in-out; /* Animazione per l'ingresso */
+}
+
+
+.custom-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Imposta l'altezza minima in modo che riempia la finestra */
+}
+
+.top-container {
+    flex-shrink: 0; /* Il contenitore superiore non si riduce */
+}
+
+.bottom-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    margin-bottom: 15vh; 
+    padding-bottom: 20px;
+}
+
